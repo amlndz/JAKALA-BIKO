@@ -1,16 +1,16 @@
 * {
   font-family: Inter;
-  font-size: 16px;
-  margin: 0px;
+  font-size: 1rem;
+  margin: 0rem;
 }
 
 header nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 32px;
-  margin: 8px 0px;
-  border-bottom: 1px solid #d4d1c5;
+  gap: 2rem;
+  margin: 0.5rem 0rem;
+  border-bottom: 0.0625rem solid #d4d1c5;
 }
 
 header nav ul li {
@@ -23,11 +23,12 @@ header nav ul li a {
 }
 
 header nav ul li img {
-  width: 64px;
-  height: 64px;
+  width: 4rem;
+  height: 4rem;
 }
+
 main {
-  margin: 40px 16px 0px 16px;
+  margin: 2.5rem 1rem 0rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,21 +38,21 @@ footer {
   background-color: #1a1914;
   display: flex;
   justify-content: center;
-  margin-top: 28px;
+  margin-top: 1.75rem;
 }
 
 footer img {
-  width: 39.95px;
-  height: 33.87px;
-  margin: 14.97px;
+  width: 2.497rem;
+  height: 2.116875rem;
+  margin: 0.936875rem;
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 1.75rem;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .soyAryaStark {
@@ -60,60 +61,61 @@ h2 {
   justify-content: center;
   text-align: justify;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .soyAryaStark article {
-  max-width: 786px;
+  max-width: 49.125rem;
 }
 
 .soyAryaStark article h1 {
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 }
 
 .soyAryaStark article p {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .porCierto {
-  max-width: 1200px;
+  max-width: 75rem;
   text-align: justify;
 }
 
 .porCierto h2 {
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .porCierto ul li {
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 .porCierto ul li::marker {
-  font-size: 5px;
+  font-size: 0.3125rem;
 }
 
 .miLista h1 {
   align-self: right;
 }
+
 .inputNombre {
-  width: 400px;
-  height: 40px;
-  margin-top: 40px;
-  border-radius: 8px;
+  width: 25rem;
+  height: 2.5rem;
+  margin-top: 2.5rem;
+  border-radius: 0.5rem;
   background-color: #f1f0ec;
-  border: 1px solid #d4d1c5;
+  border: 0.0625rem solid #d4d1c5;
 }
 
 .miLista button {
-  padding: 12px 10px;
+  padding: 0.75rem 0.625rem;
   background-color: #393830;
   color: white;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 
 .miLista ul {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .miLista ul li {
@@ -122,22 +124,22 @@ h2 {
 
 .miLista ul li span {
   background-color: #787567;
-  padding: 4px;
-  border-radius: 16px;
+  padding: 0.25rem;
+  border-radius: 1rem;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 78.125rem) {
   .soyAryaStark img {
-    width: 361px;
-    height: 413px;
+    width: 22.5625rem;
+    height: 25.8125rem;
   }
 }
 
-@media (min-width: 1250px) {
+@media (min-width: 78.125rem) {
   .soyAryaStark img {
-    width: 350px;
-    height: 400px;
-    margin-right: 64px;
-    margin-bottom: 32px;
+    width: 21.875rem;
+    height: 25rem;
+    margin-right: 4rem;
+    margin-bottom: 2rem;
   }
 }
