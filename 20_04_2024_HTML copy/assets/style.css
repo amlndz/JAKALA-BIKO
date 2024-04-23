@@ -1,0 +1,143 @@
+* {
+  font-family: Inter;
+  font-size: 16px;
+  margin: 0px;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin: 8px 0px;
+  border-bottom: 1px solid #d4d1c5;
+}
+
+header nav ul li {
+  list-style: none;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #1a1914;
+}
+
+header nav ul li img {
+  width: 64px;
+  height: 64px;
+}
+main {
+  margin: 40px 16px 0px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  background-color: #1a1914;
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+footer img {
+  width: 39.95px;
+  height: 33.87px;
+  margin: 14.97px;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.soyAryaStark {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  text-align: justify;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.soyAryaStark article {
+  max-width: 786px;
+}
+
+.soyAryaStark article h1 {
+  margin-bottom: 32px;
+}
+
+.soyAryaStark article p {
+  margin-bottom: 20px;
+}
+
+.porCierto {
+  max-width: 1200px;
+  text-align: justify;
+}
+
+.porCierto h2 {
+  margin-bottom: 24px;
+}
+
+.porCierto ul li {
+  margin-bottom: 16px;
+}
+
+.porCierto ul li::marker {
+  font-size: 5px;
+}
+
+.miLista h1 {
+  align-self: right;
+}
+.inputNombre {
+  width: 400px;
+  height: 40px;
+  margin-top: 40px;
+  border-radius: 8px;
+  background-color: #f1f0ec;
+  border: 1px solid #d4d1c5;
+}
+
+.miLista button {
+  padding: 12px 10px;
+  background-color: #393830;
+  color: white;
+  border-radius: 10px;
+}
+
+.miLista ul {
+  display: flex;
+  gap: 20px;
+}
+
+.miLista ul li {
+  list-style: none;
+}
+
+.miLista ul li span {
+  background-color: #787567;
+  padding: 4px;
+  border-radius: 16px;
+}
+
+@media (max-width: 1250px) {
+  .soyAryaStark img {
+    width: 361px;
+    height: 413px;
+  }
+}
+
+@media (min-width: 1250px) {
+  .soyAryaStark img {
+    width: 350px;
+    height: 400px;
+    margin-right: 64px;
+    margin-bottom: 32px;
+  }
+}
