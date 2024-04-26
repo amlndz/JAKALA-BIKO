@@ -24,27 +24,43 @@
         </ul>
       </nav>
     </header>
-    <main class="miLista">
-      <h1>Mi lista de nombres</h1>
-      <form>
-        <input
-          type="text"
-          placeholder="Joffrey Baratheon..."
-          aria-label="Introduce un nombre"
-          class="inputNombre"
-        />
-        <button type="submit">Añadir</button>
-      </form>
-      <ul>
-        <li>Todos <span>3</span></li>
-        <li>Pendientes <span>2</span></li>
-        <li>Completados <span>1</span></li>
-      </ul>
-      <form>
-        <input type="checkbox" />Tywin Lannister
-        <input type="checkbox" />Melisandre <input type="checkbox" />Beric
-        Dondarrion
-      </form>
+    <main>
+      <div class="miLista">
+        <h1>Mi lista de nombres</h1>
+        <div class="elementosMiLista">
+          <form>
+            <input
+              type="text"
+              placeholder="Joffrey Baratheon..."
+              aria-label="Introduce un nombre"
+              class="inputNombre"
+            />
+            <button type="submit">Añadir</button>
+          </form>
+          <ul class="task">
+            <li>Todos <span>3</span></li>
+            <li>Pendientes <span>2</span></li>
+            <li>Completados <span>1</span></li>
+          </ul>
+        </div>
+        <ul class="checkNames">
+          <li class="round">
+            <label>
+              Tywin Lanister <input class="checkItem" type="checkbox" checked />
+            </label>
+          </li>
+          <li class="round">
+            <label>
+              Melisandre <input class="checkItem" type="checkbox" />
+            </label>
+          </li>
+          <li class="round">
+            <label>
+              Beric Dondarrion <input class="checkItem" type="checkbox" />
+            </label>
+          </li>
+        </ul>
+      </div>
     </main>
     <footer>
       <img src="./assets/images/logo.svg" alt="foto lobo" width="100x" />

@@ -1,7 +1,12 @@
-* {
+html {
   font-family: Inter;
   font-size: 1rem;
   margin: 0rem;
+  background-color: #f8f7f5;
+}
+
+body {
+  margin: 0px;
 }
 
 header nav ul {
@@ -32,6 +37,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 
 footer {
@@ -39,6 +45,7 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: 1.75rem;
+  width: 100%;
 }
 
 footer img {
@@ -100,7 +107,6 @@ h2 {
 .inputNombre {
   width: 25rem;
   height: 2.5rem;
-  margin-top: 2.5rem;
   border-radius: 0.5rem;
   background-color: #f1f0ec;
   border: 0.0625rem solid #d4d1c5;
@@ -111,11 +117,18 @@ h2 {
   background-color: #393830;
   color: white;
   border-radius: 0.625rem;
+  width: 4.75rem;
+  height: 2.5rem;
 }
 
 .miLista ul {
   display: flex;
-  gap: 1.25rem;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.task {
+  width: 25rem;
 }
 
 .miLista ul li {
@@ -124,22 +137,81 @@ h2 {
 
 .miLista ul li span {
   background-color: #787567;
-  padding: 0.25rem;
+  padding: 0 0.5rem;
   border-radius: 1rem;
+  margin-left: 4px;
+  width: 2rem;
+  color: white;
 }
 
-@media (max-width: 78.125rem) {
+.checkNames {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.checkNames li {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+}
+
+.checkNames li label {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 14px 20px;
+}
+.checkItem {
+  appearance: none;
+  border: 1px solid #c5c1b2;
+  padding: 0.75rem;
+  border-radius: 50%;
+}
+
+.checkItem:checked {
+  content: "✓";
+  color: #fff;
+  background-color: #787567;
+}
+
+@media screen and (max-width: 78.125rem) {
   .soyAryaStark img {
     width: 22.5625rem;
     height: 25.8125rem;
   }
+  .elementosMiLista {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .inputNombre {
+    margin-top: 1.5rem;
+  }
+
+  .miLista ul {
+    margin-top: 2.5rem;
+  }
 }
 
-@media (min-width: 78.125rem) {
+@media screen and (min-width: 78.125rem) {
   .soyAryaStark img {
     width: 21.875rem;
     height: 25rem;
     margin-right: 4rem;
     margin-bottom: 2rem;
+  }
+
+  .miLista {
+    max-width: 37.5rem;
+    max-height: 25rem;
+    flex: 1;
+  }
+
+  .miLista ul {
+    margin-top: 2.5rem;
+  }
+
+  .input {
+    margin-top: 2rem;
   }
 }
