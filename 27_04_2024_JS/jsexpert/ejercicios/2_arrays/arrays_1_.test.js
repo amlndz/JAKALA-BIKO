@@ -1,8 +1,9 @@
 const lista = [];
 
 //--------- ⬇️ Modifica el código de abajo ⬇️ ------------//
-
-
+for (let i = 0; i < 10; i++) {
+  lista.push(i + 1);
+}
 
 //--------- ⬆️ Modifica el código de arriba ⬆️ -----------//
 
