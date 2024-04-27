@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "WallabyJs.quokka-vscode",
+    "yoavbls.pretty-ts-errors",
+    "sketchbuch.vsc-quokka-statusbar",
+    "dbaeumer.vscode-eslint",
+    "vitest.explorer"
+  ],
+  "unwantedRecommendations": [
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "ms-vscode.vscode-typescript-next",
+    "GoogleCloudTools.cloudcode",
+    "vscodevim.vim",
+    "firefox-devtools.vscode-firefox-debug",
+    "GitHub.vscode-pull-request-github",
+    "ms-vscode-remote.remote-containers",
+    "ms-edgedevtools.vscode-edge-devtools"
+  ]
+}

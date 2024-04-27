@@ -1,0 +1,16 @@
+{
+  "name": "jsexpert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "9.0.0",
+    "vite": "4.5.1",
+    "vitest": "^1.5.2"
+  }
+}
