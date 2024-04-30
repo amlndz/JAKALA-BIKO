@@ -9,12 +9,12 @@ const clientes = {
     pedidos: [
       { id: 3, producto: "Zapatos", precio: 60 },
       { id: 1, producto: "Camiseta", precio: 20 },
-      { id: 2, producto: "Pantalón", precio: 40 }
+      { id: 2, producto: "Pantalón", precio: 40 },
     ],
     localizacion: {
       ciudad: "Madrid",
-      country_code: "es"
-    }
+      country_code: "es",
+    },
   },
   pedro: {
     nombre: "Pedro",
@@ -24,12 +24,12 @@ const clientes = {
     pedidos: [
       { id: 1, producto: "Camiseta", precio: 20 },
       { id: 3, producto: "Zapatos", precio: 60 },
-      { id: 4, producto: "Pantalón", precio: 40 }
+      { id: 4, producto: "Pantalón", precio: 40 },
     ],
     localizacion: {
       ciudad: "Buenos Aires",
-      country_code: "ar"
-    }
+      country_code: "ar",
+    },
   },
   maria: {
     nombre: "María",
@@ -39,20 +39,20 @@ const clientes = {
     pedidos: [
       { id: 1, producto: "Camiseta", precio: 20 },
       { id: 2, producto: "Pantalón", precio: 40 },
-      { id: 3, producto: "Zapatos", precio: 60 }
+      { id: 3, producto: "Zapatos", precio: 60 },
     ],
     localizacion: {
       ciudad: "Ciudad de México",
-      country_code: "mx"
-    }
-  }, 
-}
+      country_code: "mx",
+    },
+  },
+};
 
 const countries = {
   es: "España",
   ar: "Argentina",
-  mx: "México"
-}
+  mx: "México",
+};
 
 let getNombreCompletoEnMayusculas;
 let getNombreDePais;
@@ -60,7 +60,17 @@ let getNumeroDePedidos;
 
 //--------- ⬇️ Modifica el código de abajo ⬇️ ------------//
 
+getNombreCompletoEnMayusculas = (cliente) => {
+  return `${cliente.nombre.toUpperCase()} ${cliente.apellido.toUpperCase()}`;
+};
 
+getNombreDePais = (cliente) => {
+  return countries[cliente.localizacion.country_code];
+};
+
+getNumeroDePedidos = (cliente) => {
+  return cliente.pedidos.length;
+};
 //--------- ⬆️ Modifica el código de arriba ⬆️ -----------//
 
 function getClienteFormateado(cliente) {
@@ -71,7 +81,13 @@ function getClienteFormateado(cliente) {
 }
 
 it("obtenerDatosDeClienteFormateados debería devolver un string con los datos del cliente", () => {
-  expect(getClienteFormateado(clientes.juan)).toBe("JUAN GÓMEZ, 3 pedidos, España");
-  expect(getClienteFormateado(clientes.pedro)).toBe("PEDRO PÉREZ, 3 pedidos, Argentina");
-  expect(getClienteFormateado(clientes.maria)).toBe("MARÍA LÓPEZ, 3 pedidos, México");
+  expect(getClienteFormateado(clientes.juan)).toBe(
+    "JUAN GÓMEZ, 3 pedidos, España"
+  );
+  expect(getClienteFormateado(clientes.pedro)).toBe(
+    "PEDRO PÉREZ, 3 pedidos, Argentina"
+  );
+  expect(getClienteFormateado(clientes.maria)).toBe(
+    "MARÍA LÓPEZ, 3 pedidos, México"
+  );
 });
