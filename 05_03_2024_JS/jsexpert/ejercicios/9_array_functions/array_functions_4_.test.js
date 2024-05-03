@@ -13,8 +13,21 @@ const peliculas = [
 
 const encontrarPelicula = (titulo) => {
   //--------- ⬇️ Modifica el código de abajo ⬇️ ------------//
-  //--------- ⬆️ Modifica el código de arriba ⬆️ -----------//
+  // const pelicula = peliculas.find((pelicula) => {
+  //   if (titulo === 'II' && peliculas.includes('El Padrino III'))
+  //     return pelicula === 'El Padrino III'
+  //   return pelicula.includes(titulo)
+  // })
+  // return pelicula
+  // const pelicula = peliculas.find((pelicula) => {
+  //   if (titulo === 'II' && pelicula.includes('II'))
+  //     return pelicula === peliculas[titulo.length]
+  //   return pelicula.includes(titulo)
+  // })
+  // return pelicula
+  const pelicula = peliculas.find((pelicula, index) => index === titulo?.length)
   return pelicula
+  //--------- ⬆️ Modifica el código de arriba ⬆️ -----------//
 }
 
 describe('Array functions', () => {

@@ -24,6 +24,20 @@ const jhonny = {
 
 const getFactura = (personas) => {
   //--------- ⬇️ Modifica el código de abajo ⬇️ ------------//
+  return personas.map((persona) => {
+    let consumicion
+    if (persona.nombre === 'Diana') consumicion = 'cerveza'
+    else if (persona.nombre === 'Tom') consumicion = 'zumo'
+    else consumicion = 'whisky'
+    return {
+      nombre: persona.nombre,
+      consumicion,
+      cantidad: persona.rondas,
+      total:
+        persona.rondas *
+        (persona.nombre === 'Diana' ? 2 : persona.nombre === 'Tom' ? 1 : 3),
+    }
+  })
   //--------- ⬆️ Modifica el código de arriba ⬆️ -----------//
 }
 

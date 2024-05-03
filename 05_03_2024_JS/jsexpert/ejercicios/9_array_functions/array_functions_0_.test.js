@@ -1,5 +1,6 @@
 const getResto = (divisor, ...numeros) => {
   //--------- ⬇️ Modifica el código de abajo ⬇️ ------------//
+  return numeros.map((numero) => numero % divisor)
   //--------- ⬆️ Modifica el código de arriba ⬆️ -----------//
 }
 

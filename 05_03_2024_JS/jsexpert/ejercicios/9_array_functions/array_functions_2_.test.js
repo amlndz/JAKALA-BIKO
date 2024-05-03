@@ -57,8 +57,16 @@ const conjuros = [
 ]
 
 const encontrarConjuro = ({ nivel, escuela }) => {
-  return conjuros
-  //--------- ⬇️ Modifica el código de abajo ⬇️ ------------//
+  return (
+    conjuros
+      //--------- ⬇️ Modifica el código de abajo ⬇️ ------------//
+      .filter((conjuro) => {
+        if (nivel && escuela)
+          return conjuro.nivel === nivel && conjuro.escuela === escuela
+        if (nivel) return conjuro.nivel === nivel
+        if (escuela) return conjuro.escuela === escuela
+      })
+  )
   //--------- ⬆️ Modifica el código de arriba ⬆️ -----------//
 }
 

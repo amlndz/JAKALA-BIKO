@@ -12,6 +12,10 @@ const databaseService = {
 
 const gestionarPaquetes = (libros) => {
   //--------- ⬇️ Modifica el código de abajo ⬇️ ------------//
+  libros.forEach((libro) => {
+    notificationService.enviarNotificacion(libro)
+    databaseService.marcarComoEnviado(libro)
+  })
   //--------- ⬆️ Modifica el código de arriba ⬆️ -----------//
 }
 
