@@ -6,7 +6,7 @@ let inputNombre
 // let completadosList = []
 // const personaje = { nombre: 'Arya', completed: false }
 const array = []
-
+let li
 let inputNombreSpace
 let checkboxes
 let input
@@ -18,8 +18,10 @@ const validarNombre = () => {
     : alert('ingresa un nombre')
 }
 
+
+
 const introducirNombre = (inputNombre) => {
-  let li = document.createElement('li')
+  li = document.createElement('li')
   li.textContent = inputNombre
   li.className = 'list-item'
   input = document.createElement('input')
@@ -33,7 +35,6 @@ const introducirNombre = (inputNombre) => {
   //   pendientesList.push(inputNombre)
   contar()
   inputNombreSpace.value = ''
-  console.log(checkboxes)
 }
 
 totalNames.addEventListener('click', () => marcarActivo(totalNames))
@@ -57,13 +58,7 @@ const marcarActivo = (activo) => {
     if (element === activo) {
       console.log('dentro del if')
       activo.classList.remove('filter-button-disabled')
-      element === totalNames
-        ? (lista = todosList)
-        : element === pendingNames
-        ? (lista = pendientesList)
-        : (lista = completadosList)
-      console.log(lista)
-      mostrarLista(lista)
+      mostrarLista(element)
     } else {
       element.classList.add('filter-button-disabled')
     }
@@ -79,55 +74,68 @@ let pendientesTotal = totalNamesSpan.innerHTML
 let completadosTotal = completedNamesSpan.innerHTML
 
 const contarTotal = () => {
-  totalCounter = totalNamesSpan.innerHTML = totalCounter
+  totalNamesSpan.innerHTML = array.length
 }
 
 const contarPendientes = () => {
-  completadosTotal = array.filter((personaje) => !personaje.completado)
-  pendingNamesSpan.innerHTML = pendientesTotal
+  pendientesTotal = array.filter((personaje) => !personaje.completado)
+  pendingNamesSpan.innerHTML = pendientesTotal.length
 }
 
 const contarCompletados = () => {
   completadosTotal = array.filter((personaje) => personaje.completado)
   completedNamesSpan.innerHTML = completadosTotal.length
 }
+
 const contar = () => {
   contarTotal()
   contarPendientes()
   contarCompletados()
 }
 
-const mostrarLista = (lista) => {
-  while (listaNombres.hasChildNodes())
-    listaNombres.removeChild(listaNombres.firstChild)
-
-  lista.forEach((elemento) => {
-    let li = document.createElement('li')
-    li.textContent = elemento
+const esActivo = (filtro) => {
+  if (!filtro.classList.contains('filter-button-disabled')) 
+    return true
+}
+const introducirPersonaje = (element) => {
+  li = document.createElement('li')
+    li.textContent = element.nombre
     li.className = 'list-item'
     input = document.createElement('input')
     input.type = 'checkbox'
     input.className = 'checkbox'
+    if (element.completado) input.setAttribute('checked', true)
     input.onclick = presionarCheckbox
-    input.setAttribute(onclick, () => console.log('hola'))
     li.appendChild(input)
     listaNombres.appendChild(li)
-  })
-}
-const eliminarElemento = (listElement, elemento) => {
-  return listElement.filter((pendiente) => pendiente !== elemento)
 }
 
+const mostrarLista = (lista) => {
+  while (listaNombres.firstChild) {
+    listaNombres.removeChild(listaNombres.firstChild);
+  }
+  
+  array.forEach((element) => {
+    if (esActivo(totalNames) ||
+        (esActivo(pendingNames) && !element.completado) ||
+        (esActivo(completedNames) && element.completado)) {
+      introducirPersonaje(element);
+    }
+  });
+}
+
+
+
 const marcarCompletado = (task) => {
-  completadosList.push(task)
-  pendientesList = eliminarElemento(pendientesList, task)
+  array.forEach((element) => { if (element.nombre === task) element.completado = true})
   contar()
+  mostrarLista()
 }
 
 const maracarNOCompletado = (task) => {
-  pendientesList.push(task)
-  completadosList = eliminarElemento(completadosList, task)
+  array.forEach((element) => { if (element.nombre === task) element.completado = false})
   contar()
+  mostrarLista()
 }
 const presionarCheckbox = (e) => {
   if (e.target.checked === true) {
