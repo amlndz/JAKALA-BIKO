@@ -1,0 +1,25 @@
+{
+  "name": "jsexpert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "cors": "^2.8.5",
+    "express": "4.19.2",
+    "lowdb": "^7.0.1"
+  },
+  "devDependencies": {
+    "eslint": "9.0.0",
+    "http-server": "^14.1.1",
+    "vite": "4.5.1",
+    "vitest": "1.5.0"
+  }
+}

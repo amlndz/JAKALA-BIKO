@@ -1,0 +1,17 @@
+{
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true
+  },
+  "extensions.ignoreRecommendations": false,
+  "eslint.options": {
+    "overrideConfigFile": ".eslintrc.js"
+  },
+  "quokka.suppressExpirationNotifications": true,
+  "vitest.rootConfig": "./vitest.config.js",
+  "vitest.vitestPackagePath": "node_modules/vitest/package.json",
+  "testing.automaticallyOpenPeekView": "never",
+  "testing.openTesting": "neverOpen",
+  "editor.formatOnSave": true
+}

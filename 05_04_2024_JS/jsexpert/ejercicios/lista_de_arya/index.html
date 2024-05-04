@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="listaDeNombres.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Lista de Nombres cutre</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Mi Lista de Nombres</h1>
+      </header>
+      <div class="input-container">
+        <input type="text" placeholder="Joffrey Baratheon..." id="nameInput">
+        <button id="addButton">Añadir</button>
+      </div>
+      <div class="status-container">
+        <span id="totalNames" class="filter-button">Todos <span class="chip">0</span></span>
+        <span id="pendingNames" class="filter-button filter-button-disabled">Pendientes <span class="chip">0</span></span>
+        <span id="completedNames" class="filter-button filter-button-disabled">Completados <span class="chip">0</span></span>
+      </div>
+      <ul id="nameList">
+        <!-- <li class="list-item">asdf<input type="checkbox"></li> -->
+      </ul>
+    </div>
+    <script src="listaDeNombres.js" defer></script>
+</html>
