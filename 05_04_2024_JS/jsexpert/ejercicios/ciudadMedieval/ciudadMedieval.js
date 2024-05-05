@@ -26,11 +26,72 @@ export const medievalCity = {
     alimentos: { agricultores: 10, soldados: 0, artesanos: 2 },
   },
 }
+export function calcularConsumoDiarioDeAlimentos(city) {
+  let mediaAlimentos = 0
 
-export function calcularConsumoDiarioDeAlimentos(city) {}
+  city.poblacion.forEach((poblacion) => {
+    mediaAlimentos += poblacion.consumo * poblacion.cantidad
+  })
 
-export function calcularProduccionDiaria(city) {}
+  console.log(mediaAlimentos)
+  return { consumoTotalAlimentos: mediaAlimentos }
+}
 
-export function simularInvierno(city, days) {}
+export function calcularProduccionDiaria(city) {
+  let produccionDiaria = {
+    madera: 0,
+    hierro: 0,
+    oro: 0,
+    alimentos: 0,
+  }
 
-export function calcularDiasDeSupervivencia(city) {}
+  city.poblacion.forEach((poblacion) => {
+    produccionDiaria.madera +=
+      city.produccion.madera[poblacion.tipo] * poblacion.cantidad
+    produccionDiaria.hierro +=
+      city.produccion.hierro[poblacion.tipo] * poblacion.cantidad
+    produccionDiaria.oro +=
+      city.produccion.oro[poblacion.tipo] * poblacion.cantidad
+    produccionDiaria.alimentos +=
+      city.produccion.alimentos[poblacion.tipo] * poblacion.cantidad
+  })
+
+  return produccionDiaria
+}
+
+export function simularInvierno(city, days) {
+  let recursosRestantes = {
+    madera: city.recursos.madera,
+    hierro: city.recursos.hierro,
+    oro: city.recursos.oro,
+    alimentos: city.recursos.alimentos,
+  }
+
+  const produccionDiaria = calcularProduccionDiaria(city)
+
+  for (let i = 0; i < days; i++) {
+    recursosRestantes.madera += produccionDiaria.madera / 2
+    recursosRestantes.hierro += produccionDiaria.hierro / 2
+    recursosRestantes.oro += produccionDiaria.oro / 2
+    recursosRestantes.alimentos +=
+      produccionDiaria.alimentos / 2 -
+      calcularConsumoDiarioDeAlimentos(city).consumoTotalAlimentos
+  }
+
+  const consumo = calcularConsumoDiarioDeAlimentos(city)
+  const diasSupervivencia = Math.floor(
+    recursosRestantes.alimentos / consumo.consumoTotalAlimentos
+  )
+  console.log(diasSupervivencia)
+
+  return { diasSupervivencia, recursosRestantes }
+}
+
+export function calcularDiasDeSupervivencia(city) {
+  const consumo = calcularConsumoDiarioDeAlimentos(city)
+  const diasDeSupervivencia = Math.floor(
+    city.recursos.alimentos / consumo.consumoTotalAlimentos
+  )
+  console.log(diasDeSupervivencia)
+  return diasDeSupervivencia
+}
