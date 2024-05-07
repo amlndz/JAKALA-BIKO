@@ -27,6 +27,10 @@ function decreaseSellIn(item) {
 }
 
 function changeQuality(item) {
+  if (isSulfura(item)) {
+    return;
+  }
+
   if (item.sellIn >= 0) {
     return;
   }
@@ -43,7 +47,7 @@ function changeQuality(item) {
     return;
   }
 
-  if (item.quality > MIN_QUALITY && !isSulfura(item)) {
+  if (item.quality > MIN_QUALITY) {
     item.quality = item.quality - 1;
   }
 }
