@@ -31,7 +31,11 @@ function changeQuality(item) {
     return;
   }
 
-  if (item.name != "Aged Brie") {
+  if (item.name === BRIE) {
+    if (item.quality < 50) {
+      item.quality = item.quality + 1;
+    }
+  } else {
     if (item.name != "Backstage passes to a TAFKAL80ETC concert") {
       if (item.quality > 0) {
         if (item.name != "Sulfuras, Hand of Ragnaros") {
@@ -40,10 +44,6 @@ function changeQuality(item) {
       }
     } else {
       item.quality = 0;
-    }
-  } else {
-    if (item.quality < 50) {
-      item.quality = item.quality + 1;
     }
   }
 }
