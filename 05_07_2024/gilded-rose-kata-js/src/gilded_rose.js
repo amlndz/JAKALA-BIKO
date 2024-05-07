@@ -8,31 +8,15 @@ const MAX_QUALITY = 50;
 const MIN_QUALITY = 0;
 
 function isBrie(item) {
-  return item.nombre === BRIE;
+  return item.name === BRIE;
 }
 
 function isBackstage(item) {
-  return item.nombre === BAKSTAGE;
+  return item.name === BAKSTAGE;
 }
 
 function isSulfura(item) {
-  return item.nombre === SULFURA;
-}
-
-function increaseQuality(item) {
-  item.quality = item.quality + 1;
-  if (item.name == BAKSTAGE) {
-    if (item.sellIn < 11) {
-      if (item.quality < 50) {
-        item.quality = item.quality + 1;
-      }
-    }
-    if (item.sellIn < 6) {
-      if (item.quality < 50) {
-        item.quality = item.quality + 1;
-      }
-    }
-  }
+  return item.name === SULFURA;
 }
 
 function updateItems(items) {
@@ -40,23 +24,35 @@ function updateItems(items) {
     const item = items[i];
     if (!isBrie(item) && !isBackstage(item)) {
       if (item.quality > 0) {
-        if (item.name != SULFURA) {
+        if (item.name != "Sulfuras, Hand of Ragnaros") {
           item.quality = item.quality - 1;
         }
       }
     } else {
-      if (item.quality < MAX_QUALITY) {
-        increaseQuality(item);
+      if (item.quality < 50) {
+        item.quality = item.quality + 1;
+        if (item.name == "Backstage passes to a TAFKAL80ETC concert") {
+          if (item.sellIn < 11) {
+            if (item.quality < 50) {
+              item.quality = item.quality + 1;
+            }
+          }
+          if (item.sellIn < 6) {
+            if (item.quality < 50) {
+              item.quality = item.quality + 1;
+            }
+          }
+        }
       }
     }
-    if (!isSulfura(item)) {
+    if (item.name != "Sulfuras, Hand of Ragnaros") {
       item.sellIn = item.sellIn - 1;
     }
     if (item.sellIn < 0) {
-      if (item.name != BRIE) {
-        if (item.name != BAKSTAGE) {
+      if (item.name != "Aged Brie") {
+        if (item.name != "Backstage passes to a TAFKAL80ETC concert") {
           if (item.quality > 0) {
-            if (item.name != SULFURA) {
+            if (item.name != "Sulfuras, Hand of Ragnaros") {
               item.quality = item.quality - 1;
             }
           }
