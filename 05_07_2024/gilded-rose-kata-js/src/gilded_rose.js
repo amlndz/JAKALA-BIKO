@@ -4,48 +4,68 @@ const BAKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
 const BRIE = "Aged Brie";
 const SULFURA = "Sulfuras, Hand of Ragnaros";
 
+const MAX_QUALITY = 50;
+const MIN_QUALITY = 0;
+
+function isBrie(item) {
+  return item.nombre === BRIE;
+}
+
+function isBackstage(item) {
+  return item.nombre === BAKSTAGE;
+}
+
+function isSulfura(item) {
+  return item.nombre === SULFURA;
+}
+
+function increaseQuality(item) {
+  item.quality = item.quality + 1;
+  if (item.name == BAKSTAGE) {
+    if (item.sellIn < 11) {
+      if (item.quality < 50) {
+        item.quality = item.quality + 1;
+      }
+    }
+    if (item.sellIn < 6) {
+      if (item.quality < 50) {
+        item.quality = item.quality + 1;
+      }
+    }
+  }
+}
+
 function updateItems(items) {
   for (let i = 0; i < items.length; i++) {
-    if (items[i].name != BRIE && items[i].name != BAKSTAGE) {
-      if (items[i].quality > 0) {
-        if (items[i].name != SULFURA) {
-          items[i].quality = items[i].quality - 1;
+    const item = items[i];
+    if (!isBrie(item) && !isBackstage(item)) {
+      if (item.quality > 0) {
+        if (item.name != SULFURA) {
+          item.quality = item.quality - 1;
         }
       }
     } else {
-      if (items[i].quality < 50) {
-        items[i].quality = items[i].quality + 1;
-        if (items[i].name == BAKSTAGE) {
-          if (items[i].sellIn < 11) {
-            if (items[i].quality < 50) {
-              items[i].quality = items[i].quality + 1;
-            }
-          }
-          if (items[i].sellIn < 6) {
-            if (items[i].quality < 50) {
-              items[i].quality = items[i].quality + 1;
-            }
-          }
-        }
+      if (item.quality < MAX_QUALITY) {
+        increaseQuality(item);
       }
     }
-    if (items[i].name != SULFURA) {
-      items[i].sellIn = items[i].sellIn - 1;
+    if (!isSulfura(item)) {
+      item.sellIn = item.sellIn - 1;
     }
-    if (items[i].sellIn < 0) {
-      if (items[i].name != BRIE) {
-        if (items[i].name != BAKSTAGE) {
-          if (items[i].quality > 0) {
-            if (items[i].name != SULFURA) {
-              items[i].quality = items[i].quality - 1;
+    if (item.sellIn < 0) {
+      if (item.name != BRIE) {
+        if (item.name != BAKSTAGE) {
+          if (item.quality > 0) {
+            if (item.name != SULFURA) {
+              item.quality = item.quality - 1;
             }
           }
         } else {
-          items[i].quality = 0;
+          item.quality = 0;
         }
       } else {
-        if (items[i].quality < 50) {
-          items[i].quality = items[i].quality + 1;
+        if (item.quality < 50) {
+          item.quality = item.quality + 1;
         }
       }
     }
