@@ -26,6 +26,28 @@ function decreaseSellIn(item) {
   item.sellIn = item.sellIn - 1;
 }
 
+function changeQuality(item) {
+  if (item.sellIn >= 0) {
+    return;
+  }
+
+  if (item.name != "Aged Brie") {
+    if (item.name != "Backstage passes to a TAFKAL80ETC concert") {
+      if (item.quality > 0) {
+        if (item.name != "Sulfuras, Hand of Ragnaros") {
+          item.quality = item.quality - 1;
+        }
+      }
+    } else {
+      item.quality = 0;
+    }
+  } else {
+    if (item.quality < 50) {
+      item.quality = item.quality + 1;
+    }
+  }
+}
+
 function updateItems(items) {
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
@@ -54,23 +76,7 @@ function updateItems(items) {
     }
     decreaseSellIn(item);
 
-    if (item.sellIn < 0) {
-      if (item.name != "Aged Brie") {
-        if (item.name != "Backstage passes to a TAFKAL80ETC concert") {
-          if (item.quality > 0) {
-            if (item.name != "Sulfuras, Hand of Ragnaros") {
-              item.quality = item.quality - 1;
-            }
-          }
-        } else {
-          item.quality = 0;
-        }
-      } else {
-        if (item.quality < 50) {
-          item.quality = item.quality + 1;
-        }
-      }
-    }
+    changeQuality(item);
   }
 
   return items;
