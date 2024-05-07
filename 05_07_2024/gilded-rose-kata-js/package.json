@@ -1,0 +1,15 @@
+{
+  "name": "gilded-rose-kata-js",
+  "version": "1.0.0",
+  "description": "Gilded Rose kata in JavaScript",
+  "scripts": {
+    "test": "node test/text_test.js"
+  },
+  "keywords": [
+    "kata",
+    "refactor",
+    "gilded-rose"
+  ],
+  "license": "MIT",
+  "private": true
+}
