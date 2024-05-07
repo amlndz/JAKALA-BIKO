@@ -19,6 +19,13 @@ function isSulfura(item) {
   return item.name === SULFURA;
 }
 
+function decreaseSellIn(item) {
+  if (isSulfura(item)) {
+    return;
+  }
+  item.sellIn = item.sellIn - 1;
+}
+
 function updateItems(items) {
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
@@ -45,9 +52,8 @@ function updateItems(items) {
         }
       }
     }
-    if (item.name != "Sulfuras, Hand of Ragnaros") {
-      item.sellIn = item.sellIn - 1;
-    }
+    decreaseSellIn(item);
+
     if (item.sellIn < 0) {
       if (item.name != "Aged Brie") {
         if (item.name != "Backstage passes to a TAFKAL80ETC concert") {
