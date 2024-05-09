@@ -53,11 +53,17 @@ function changeQualityAfterSellIn(item) {
 }
 
 function changeQualityBackStage(item) {
-  if (item.sellIn < 11) {
-    if (item.quality < 50) {
-      item.quality = item.quality + 1;
-    }
+  if (item.sellIn >= 11) {
+    return
   }
+
+  if (item.quality > MAX_QUALITY) {
+    return
+  }
+  
+  item.quality = item.quality + 1;
+  
+  
   if (item.sellIn < 6) {
     if (item.quality < 50) {
       item.quality = item.quality + 1;
