@@ -4,6 +4,11 @@ import { expect, it } from "vitest";
 
 //--------- ⬇️ Modifica el código de abajo ⬇️ ------------//
 
+// const nombres = ["Julio",
+// "Alfonso",
+// "Pedro",
+// "Ramón",] as const;
+
 const nombres: [string, string, string, string] = [
   "Julio",
   "Alfonso",

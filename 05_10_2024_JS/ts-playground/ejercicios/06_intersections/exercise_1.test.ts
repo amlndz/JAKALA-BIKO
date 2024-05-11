@@ -1,31 +1,30 @@
 import { expect, it } from "vitest";
 
 type BaseButton = {
-  content: string,
-  onClick: () => void,
-}
+  content: string;
+  onClick: () => void;
+};
 
 //--------- ⬇️ Modifica el código de abajo ⬇️ ------------//
 
-type PrimaryButton = 
+type PrimaryButton = BaseButton & { variant: "primary" };
 
-type SecondaryButton = 
+type SecondaryButton = BaseButton & { variant: "secondary" };
 
 //--------- ⬆️ Modifica el código de arriba ⬆️ -----------//
-
 
 type Button = PrimaryButton | SecondaryButton;
 
 const button: Button = {
-  content: 'irrelevantContent',
+  content: "irrelevantContent",
   onClick: () => {},
-  variant: 'primary'
-}
+  variant: "primary",
+};
 
 const isPrimaryButton = (element: Button): element is PrimaryButton => {
-  return element.variant === 'primary';
-}
+  return element.variant === "primary";
+};
 
-it('should return expected result', () => {
-  expect(isPrimaryButton(button)).toBeTruthy()
-})
+it("should return expected result", () => {
+  expect(isPrimaryButton(button)).toBeTruthy();
+});

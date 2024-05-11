@@ -2,9 +2,9 @@ import { expect, it } from "vitest";
 
 //--------- ⬇️ Modifica el código de abajo ⬇️ ------------//
 
-type Personaje = "Bueno";
+type Personaje = "Bueno" | "Malo" | "Feo";
 
-type Nombre = "";
+type Nombre = "Rubio" | "Sentencia" | "Tuco";
 
 //--------- ⬆️ Modifica el código de arriba ⬆️ -----------//
 
@@ -20,6 +20,8 @@ function getName(personaje: Personaje): Nombre {
   if (personaje === "Feo") {
     return "Tuco";
   }
+
+  throw new Error("Caso no controlado");
 }
 
 it("should return expected result", () => {

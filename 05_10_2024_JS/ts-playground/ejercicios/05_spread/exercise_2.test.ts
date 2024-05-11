@@ -19,6 +19,9 @@ pelicula2 = {
   autor: "Leonardo Di Caprio",
 };
 
+// pelicula2 = { ...pelicula1 };
+// pelicula2.autor = "Leonardo Di Caprio";
+
 //--------- ⬆️ Modifica el código de arriba ⬆️ -----------//
 
 it("should mantain two instances of Pelicula", () => {
