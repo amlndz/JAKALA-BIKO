@@ -1,5 +1,8 @@
-export function fizzBuzz(numbers: number[]): string[] {
+export function fizzBuzz(numbers: number[]): string {
   const numbersFizzBuzz: string[] = numbers.map((number) => {
+    if (number === 0) {
+      return number.toString();
+    }
     if (isFizzBuzz(number)) {
       return "FizzBuzz";
     }
@@ -12,7 +15,7 @@ export function fizzBuzz(numbers: number[]): string[] {
     return number.toString();
   });
 
-  return numbersFizzBuzz;
+  return numbersFizzBuzz.join(", ");
 }
 
 function isBuzz(number: number) {
