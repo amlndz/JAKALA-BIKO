@@ -1,21 +1,32 @@
 export function fizzBuzz(numbers: number[]): string {
-  const numbersFizzBuzz: string[] = numbers.map((number) => {
-    if (number === 0) {
-      return number.toString();
-    }
-    if (isFizzBuzz(number)) {
-      return "FizzBuzz";
-    }
-    if (isFizz(number)) {
-      return "Fizz";
-    }
-    if (isBuzz(number)) {
-      return "Buzz";
-    }
-    return number.toString();
-  });
+  const numbersFizzBuzz: string = numbers.reduce(
+    (accumulator, currentValue, currentIndex) => {
+      if (currentValue === 0) {
+        return concatenateFizzBuzz(
+          currentIndex,
+          currentValue.toString(),
+          accumulator
+        );
+      }
+      if (isFizzBuzz(currentValue)) {
+        return concatenateFizzBuzz(currentIndex, "FizzBuzz", accumulator);
+      }
+      if (isFizz(currentValue)) {
+        return concatenateFizzBuzz(currentIndex, "Fizz", accumulator);
+      }
+      if (isBuzz(currentValue)) {
+        return concatenateFizzBuzz(currentIndex, "Buzz", accumulator);
+      }
+      return concatenateFizzBuzz(
+        currentIndex,
+        currentValue.toString(),
+        accumulator
+      );
+    },
+    ""
+  );
 
-  return numbersFizzBuzz.join(", ");
+  return numbersFizzBuzz;
 }
 
 function isBuzz(number: number) {
@@ -28,4 +39,12 @@ function isFizz(number: number) {
 
 function isFizzBuzz(number: number) {
   return isFizz(number) && isBuzz(number);
+}
+
+function concatenateFizzBuzz(
+  currentIndex: number,
+  currentValue: string,
+  accumulator: string
+) {
+  return currentIndex === 0 ? currentValue : accumulator + ", " + currentValue;
 }
