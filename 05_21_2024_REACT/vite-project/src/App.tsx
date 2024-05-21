@@ -1,5 +1,5 @@
 import "./App.css";
-
+import { MyFirstComponent } from "./components/MyFisrtComponent.tsx";
 // type Props = {
 //   num: number;
 // };
@@ -21,20 +21,6 @@ import "./App.css";
 //     <MySecondComponent num={3} />
 //   );
 // };
-
-const ItemComponent = () => {
-  return <li className="item-class">Elemento Lista</li>;
-};
-
-const MyFirstComponent = () => {
-  return (
-    <ul className="my-list-class">
-      <ItemComponent />
-      <ItemComponent />
-      <ItemComponent />
-    </ul>
-  );
-};
 
 export const App = () => {
   return (
