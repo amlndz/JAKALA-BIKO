@@ -1,15 +1,14 @@
-export const ItemComponent = () => {
-  const miArray = [
-    "elemento 1",
-    "elemento 2",
-    "elemento 3",
-    "elemento 4",
-    "elemento 5",
-  ];
+import React from "react";
 
-  return miArray.map((elemento, key) => (
+type Props = {
+  elemento: String;
+  key: number;
+};
+
+export const ItemComponent: React.FC<Props> = ({ elemento, key }) => {
+  return (
     <li className="item-class" key={key}>
       {elemento}
     </li>
-  ));
+  );
 };

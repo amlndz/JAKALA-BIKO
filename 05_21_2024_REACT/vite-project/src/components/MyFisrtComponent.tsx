@@ -1,9 +1,18 @@
 import { ItemComponent } from "./ItemComponent";
 
 export const MyFirstComponent = () => {
+  const miArray = [
+    "elemento 1",
+    "elemento 2",
+    "elemento 3",
+    "elemento 4",
+    "elemento 5",
+  ];
   return (
     <ul className="my-list-class">
-      <ItemComponent />
+      {miArray.map((elemento, key) => (
+        <ItemComponent elemento={elemento} key={key} />
+      ))}
     </ul>
   );
 };
