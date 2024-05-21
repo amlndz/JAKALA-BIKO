@@ -1,14 +1,21 @@
 import React from "react";
 
 type Props = {
-  elemento: string;
+  children: string;
   key: string;
+  isDone: boolean;
 };
 
-export const ItemComponent: React.FC<Props> = ({ elemento, key }) => {
+export const ItemComponent: React.FC<Props> = (props) => {
+  const customClass = props.isDone ? "isDone" : "";
+
+  const imprimir = () => {
+    console.log(`Funciona: ${props.children}`);
+  };
+
   return (
-    <li className="item-class" key={key}>
-      {elemento}
+    <li className={customClass} onClick={imprimir}>
+      {props.children}
     </li>
   );
 };

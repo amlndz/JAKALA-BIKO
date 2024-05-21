@@ -11,7 +11,9 @@ export const MyFirstComponent = () => {
   return (
     <ul className="my-list-class">
       {miArray.map((elemento) => (
-        <ItemComponent elemento={elemento} key={elemento} />
+        <ItemComponent key={elemento} isDone={true}>
+          {elemento}
+        </ItemComponent>
       ))}
     </ul>
   );

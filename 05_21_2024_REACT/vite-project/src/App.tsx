@@ -1,5 +1,5 @@
 import "./App.css";
-import { MyFirstComponent } from "./components/MyFisrtComponent";
+import { MyFirstComponent } from "./components/MyFirstComponent";
 
 export const App = () => {
   return (
