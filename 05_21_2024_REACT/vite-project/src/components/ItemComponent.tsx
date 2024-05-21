@@ -1,8 +1,8 @@
 import React from "react";
 
 type Props = {
-  elemento: String;
-  key: number;
+  elemento: string;
+  key: string;
 };
 
 export const ItemComponent: React.FC<Props> = ({ elemento, key }) => {
