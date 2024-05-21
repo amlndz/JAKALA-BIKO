@@ -8,11 +8,15 @@ export const MyFirstComponent = () => {
     "elemento 4",
     "elemento 5",
   ];
+  const imprimir = () => {
+    console.log("Funciona:");
+  };
   return (
     <ul className="my-list-class">
       {miArray.map((elemento) => (
         <ItemComponent key={elemento} isDone={true}>
           {elemento}
+          onClick={}
         </ItemComponent>
       ))}
     </ul>
