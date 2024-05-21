@@ -1,5 +1,5 @@
 import { ItemComponent } from "./ItemComponent";
-("./ItemComponent.tsx");
+("./ItemComponent");
 
 export const MyFirstComponent = () => {
   return (

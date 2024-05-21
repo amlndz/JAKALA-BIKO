@@ -1,5 +1,5 @@
 import "./App.css";
-import { MyFirstComponent } from "./components/MyFisrtComponent.tsx";
+import { MyFirstComponent } from "./components/MyFisrtComponent";
 
 export const App = () => {
   return (
