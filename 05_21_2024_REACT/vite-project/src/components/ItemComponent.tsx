@@ -3,7 +3,7 @@ import styles from "./ItemComponent.module.css";
 type Props = {
   children: string;
   isDone: boolean;
-  onClick: () => void;
+  onChange: () => void;
 };
 
 export const ItemComponent: React.FC<Props> = (props) => {
@@ -16,7 +16,7 @@ export const ItemComponent: React.FC<Props> = (props) => {
     <li className={styles["kill-list__item"]}>
       <label className={styles["kill-list__input"]}>
         {props.children}
-        <input type="checkbox" checked={props.isDone} />
+        <input type="checkbox" checked={props.isDone} readOnly />
       </label>
     </li>
   );
