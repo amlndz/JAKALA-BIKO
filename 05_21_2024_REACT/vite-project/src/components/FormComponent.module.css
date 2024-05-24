@@ -1,0 +1,40 @@
+.form {
+  display: flex;
+  gap: 12px;
+}
+
+.form--mobile {
+  @media screen and (min-width: 920px) {
+    display: none;
+  }
+}
+
+.form--desktop {
+  @media screen and (max-width: 919px) {
+    display: none;
+  }
+}
+
+.form__input {
+  max-width: 400px;
+  flex-grow: 1;
+  background: #f1f0ec;
+  border-radius: 8px;
+  border: 1px solid #d4d1c5;
+  padding: 10px 12px;
+
+  &::-webkit-input-placeholder {
+    color: #787567;
+  }
+}
+
+.form__button {
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 12px;
+  background: #393830;
+  border-radius: 8px;
+  border: none;
+
+  cursor: pointer;
+}
