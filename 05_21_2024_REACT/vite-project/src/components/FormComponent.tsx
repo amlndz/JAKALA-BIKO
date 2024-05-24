@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import styles from "./FormComponent.module.css";
 
-type Props = {
-  onAdd: (name: string) => void;
-};
-
-export const FormComponent: React.FC<Props> = ({ onAdd }) => {
+export const FormComponent: React.FC = () => {
   const [nombre, setNombre] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,10 +9,7 @@ export const FormComponent: React.FC<Props> = ({ onAdd }) => {
   };
 
   const handleAdd = () => {
-    if (nombre.trim()) {
-      onAdd(nombre);
-      setNombre("");
-    }
+    // Add logic to add name to list
   };
 
   return (

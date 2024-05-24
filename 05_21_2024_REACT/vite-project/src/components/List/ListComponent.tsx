@@ -1,34 +1,20 @@
-import React from "react";
+import { useState } from "react";
 import { ItemComponent } from "./ItemComponent";
 import "./ListComponent.css";
 
-type Item = {
-  name: string;
-  isDone: boolean;
-};
+export const ListComponent = () => {
+  const miArray = ["Tywin Lannister", "Melisandre", "Beric Dondarrion"];
 
-type Props = {
-  items: Item[];
-  onToggle: (name: string) => void;
-  filter: "all" | "pending" | "completed";
-};
-
-export const ListComponent: React.FC<Props> = ({ items, onToggle, filter }) => {
-  const filteredItems = items.filter((item) => {
-    if (filter === "pending") return !item.isDone;
-    if (filter === "completed") return item.isDone;
-    return true;
-  });
-
+  const [checked, setChecked] = useState(false);
   return (
     <ul className="kill-list">
-      {filteredItems.map((item) => (
+      {miArray.map((elemento) => (
         <ItemComponent
-          key={item.name}
-          isDone={item.isDone}
-          onChange={() => onToggle(item.name)}
+          key={elemento}
+          isDone={checked}
+          onChange={() => setChecked(checked ? false : true)}
         >
-          {item.name}
+          {elemento}
         </ItemComponent>
       ))}
     </ul>
