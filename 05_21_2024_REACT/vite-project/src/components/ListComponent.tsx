@@ -1,18 +1,19 @@
-import { useState } from "react";
 import { ItemComponent } from "./ItemComponent";
 import "./ListComponent.css";
 
 export const ListComponent = () => {
   const miArray = ["Tywin Lannister", "Melisandre", "Beric Dondarrion"];
+  const imprimir = (ItemIndex: number) => {
+    console.log("Item clickado:", ItemIndex);
+  };
 
-  const [checked, setChecked] = useState(false);
   return (
     <ul className="kill-list">
-      {miArray.map((elemento) => (
+      {miArray.map((elemento, index) => (
         <ItemComponent
           key={elemento}
-          isDone={checked}
-          onClick={() => setChecked(true)}
+          isDone={index === 0}
+          onClick={() => imprimir(index)}
         >
           {elemento}
         </ItemComponent>
