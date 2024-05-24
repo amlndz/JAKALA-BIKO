@@ -8,11 +8,16 @@ type Props = {
 
 export const ItemComponent: React.FC<Props> = (props) => {
   const customClass = props.isDone ? "isDone" : "notDone";
-  const customStyle = props.isDone
-    ? { color: "aquamarine" }
-    : { color: "tomato" };
+
+  const customStyle = (statusStyle: boolean) =>
+    statusStyle ? { color: "aquamarine" } : { color: "tomato" };
+
   return (
-    <li className={customClass} onClick={props.onClick} style={customStyle}>
+    <li
+      className={customClass}
+      onClick={props.onClick}
+      style={customStyle(props.isDone)}
+    >
       {props.children}
     </li>
   );
