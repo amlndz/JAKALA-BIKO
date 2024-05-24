@@ -4,3 +4,10 @@
   padding: 2rem;
   text-align: center;
 }
+
+.title {
+  font-size: 7rem;
+  padding: 1rem 4rem;
+  text-shadow: 0.2rem 0.2rem 0.5rem rgb(235, 188, 19);
+  margin: 1rem;
+}

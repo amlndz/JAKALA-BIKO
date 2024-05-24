@@ -1,4 +1,5 @@
 import React from "react";
+import "./ItemComponent.css";
 
 type Props = {
   children: string;
