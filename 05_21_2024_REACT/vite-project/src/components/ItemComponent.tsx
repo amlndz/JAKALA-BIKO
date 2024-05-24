@@ -1,5 +1,5 @@
 import React from "react";
-import "./ItemComponent.css";
+import styles from "./ItemComponent.module.css";
 
 type Props = {
   children: string;
@@ -8,13 +8,17 @@ type Props = {
 };
 
 export const ItemComponent: React.FC<Props> = (props) => {
-  const customClass = props.isDone ? "isDone" : "notDone";
+  const customClass = props.isDone ? styles.isDone : styles.notDone;
 
   const customStyle = () =>
     props.isDone ? { color: "aquamarine" } : { color: "tomato" };
 
   return (
-    <li className={customClass} onClick={props.onClick} style={customStyle()}>
+    <li
+      className={`${styles.elementList} + ${customClass}`}
+      onClick={props.onClick}
+      style={customStyle()}
+    >
       {props.children}
     </li>
   );
