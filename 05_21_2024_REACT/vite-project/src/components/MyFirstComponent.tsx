@@ -9,7 +9,7 @@ export const MyFirstComponent = () => {
     "elemento 5",
   ];
   const imprimir = (ItemIndex: number) => {
-    console.log("Funciona:", ItemIndex);
+    console.log("Item clickado:", ItemIndex);
   };
   return (
     <ul className="my-list-class">
