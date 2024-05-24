@@ -16,7 +16,7 @@ export const MyFirstComponent = () => {
       {miArray.map((elemento, index) => (
         <ItemComponent
           key={elemento}
-          isDone={index % 2 === 0 ? true : false}
+          isDone={index === 0}
           onClick={() => imprimir(index)}
         >
           {elemento}
