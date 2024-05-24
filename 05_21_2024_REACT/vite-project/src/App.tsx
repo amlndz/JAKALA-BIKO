@@ -1,11 +1,12 @@
 import "./App.css";
-import { MyFirstComponent } from "./components/MyFirstComponent";
-
+import { ListComponent } from "./components/ListComponent";
+import { NavTypesListItems } from "./components/NavTypesListItems";
 export const App = () => {
   return (
     <>
       <h1>MI LISTA DE NOMBRES</h1>
-      <MyFirstComponent />
+      <NavTypesListItems />
+      <ListComponent />
     </>
   );
 };

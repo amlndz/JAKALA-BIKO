@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./ItemComponent.module.css";
-import "./MyFirstComponent.css";
 type Props = {
   children: string;
   isDone: boolean;

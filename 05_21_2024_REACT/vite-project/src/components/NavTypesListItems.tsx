@@ -1,15 +1,17 @@
-export const navTypesListItems = () => {
+import styles from "./NavTypesListItems.module.css";
+
+export const NavTypesListItems = () => {
   return (
-    <nav className="tab-menu">
-      <ul className="tab-container">
-        <li className="tab tab--active">
-          Todos <span className="circle">3</span>
+    <nav className={styles["tab-menu"]}>
+      <ul className={styles["tab-container"]}>
+        <li className={styles["tab tab--active"]}>
+          Todos <span className={styles["circle"]}>3</span>
         </li>
-        <li className="tab">
-          Pendientes <span className="circle">2</span>
+        <li className={styles["tab"]}>
+          Pendientes <span className={styles["circle"]}>2</span>
         </li>
-        <li className="tab">
-          Completados <span className="circle">1</span>
+        <li className={styles["tab"]}>
+          Completados <span className={styles["circle"]}>1</span>
         </li>
       </ul>
     </nav>
