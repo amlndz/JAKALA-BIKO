@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const ItemComponent: React.FC<Props> = (props) => {
-  const customClass = props.isDone ? styles.isDone : styles["not-Done"];
+  const customClass = props.isDone ? styles["isDone"] : styles["not-Done"];
 
   const customStyle = () =>
     props.isDone ? { color: "aquamarine" } : { color: "tomato" };
