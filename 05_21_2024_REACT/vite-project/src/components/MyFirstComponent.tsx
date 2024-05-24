@@ -12,7 +12,7 @@ export const MyFirstComponent = () => {
     console.log("Item clickado:", ItemIndex);
   };
   return (
-    <ul className="my-list-class">
+    <ul className="kill-list">
       {miArray.map((elemento, index) => (
         <ItemComponent
           key={elemento}

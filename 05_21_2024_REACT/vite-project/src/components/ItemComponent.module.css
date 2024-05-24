@@ -14,3 +14,23 @@
 .elementList {
   list-style: none;
 }
+
+.kill-list__input {
+  display: flex;
+  justify-content: space-between;
+
+  background: #ffffff;
+  padding: 14px 20px;
+
+  &:has(input:checked) {
+    color: #c5c1b2;
+  }
+}
+
+.kill-list__item {
+  border-radius: 12px;
+  overflow: hidden;
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
