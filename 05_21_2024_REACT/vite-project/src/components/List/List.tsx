@@ -1,25 +1,5 @@
-import { useState } from "react";
 import { Item } from "../ListItem/Item";
 import "./List.css";
-
-export const List = () => {
-  const miArray = ["Tywin Lannister", "Melisandre", "Beric Dondarrion"];
-
-  const [checked, setChecked] = useState(false);
-  return (
-    <ul className="kill-list">
-      {miArray.map((elemento) => (
-        <Item
-          key={elemento}
-          isDone={checked}
-          onChange={() => setChecked(checked ? false : true)}
-        >
-          {elemento}
-        </Item>
-      ))}
-    </ul>
-  );
-};
 
 type Item = {
   name: string;
@@ -32,7 +12,7 @@ type Props = {
   filter: "all" | "pending" | "completed";
 };
 
-export const ListComponent: React.FC<Props> = ({ items, onToggle, filter }) => {
+export const List: React.FC<Props> = ({ items, onToggle, filter }) => {
   const filteredItems = items.filter((item) => {
     if (filter === "pending") return !item.isDone;
     if (filter === "completed") return item.isDone;

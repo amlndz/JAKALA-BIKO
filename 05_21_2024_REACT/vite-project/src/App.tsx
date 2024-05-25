@@ -15,6 +15,14 @@ export const App = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [filter, setFilter] = useState<"all" | "pending" | "completed">("all");
 
+  const handleToggleItem = (name: string) => {
+    setItems(
+      items.map((item) =>
+        item.name === name ? { ...item, isDone: !item.isDone } : item
+      )
+    );
+  };
+
   const total = items.length;
   const pending = items.filter((item) => !item.isDone).length;
   const done = items.filter((item) => item.isDone).length;
@@ -26,8 +34,14 @@ export const App = () => {
         <section className="section">
           <h1 className="title">Mi lista de nombres</h1>
           <FormComponent />
-          <NavTypesListItems />
-          <List />
+          <NavTypesListItems
+            total={total}
+            pending={pending}
+            completed={done}
+            filter={filter}
+            setFilter={setFilter}
+          />
+          <List items={items} onToggle={handleToggleItem} filter={filter} />
         </section>
       </main>
       <Footer />
