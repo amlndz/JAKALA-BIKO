@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./NavTypesListItems.module.css";
+import styles from "./NavFilter.module.css";
 
 type Props = {
   total: number;
@@ -9,7 +9,7 @@ type Props = {
   setFilter: (filter: "all" | "pending" | "completed") => void;
 };
 
-export const NavTypesListItems: React.FC<Props> = ({
+export const NavFilter: React.FC<Props> = ({
   total,
   pending,
   completed,

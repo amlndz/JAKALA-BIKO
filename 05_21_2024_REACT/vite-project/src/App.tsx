@@ -1,6 +1,6 @@
 import "./App.css";
 import { List } from "./components/List/List";
-import { NavTypesListItems } from "./components/Nav/NavTypesListItems";
+import { NavFilter } from "./components/Nav/NavFilter";
 import { FormComponent } from "./components/Form/Form";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
@@ -47,7 +47,7 @@ export const App = () => {
         <section className="section">
           <h1 className="title">Mi lista de nombres</h1>
           <FormComponent addItem={onClickAtAddItem} />
-          <NavTypesListItems
+          <NavFilter
             total={total}
             pending={pending}
             completed={done}
