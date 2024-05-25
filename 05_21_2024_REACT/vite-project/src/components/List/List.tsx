@@ -1,21 +1,21 @@
 import { useState } from "react";
-import { ItemComponent } from "./ItemComponent";
-import "./ListComponent.css";
+import { Item } from "../ListItem/Item";
+import "./List.css";
 
-export const ListComponent = () => {
+export const List = () => {
   const miArray = ["Tywin Lannister", "Melisandre", "Beric Dondarrion"];
 
   const [checked, setChecked] = useState(false);
   return (
     <ul className="kill-list">
       {miArray.map((elemento) => (
-        <ItemComponent
+        <Item
           key={elemento}
           isDone={checked}
           onChange={() => setChecked(checked ? false : true)}
         >
           {elemento}
-        </ItemComponent>
+        </Item>
       ))}
     </ul>
   );

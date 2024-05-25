@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ItemComponent.module.css";
+import styles from "./Item.module.css";
 
 type Props = {
   children: string;
@@ -7,7 +7,7 @@ type Props = {
   onChange: () => void;
 };
 
-export const ItemComponent: React.FC<Props> = (props) => {
+export const Item: React.FC<Props> = (props) => {
   return (
     <li className={styles["kill-list__item"]}>
       <label className={styles["kill-list__input"]}>

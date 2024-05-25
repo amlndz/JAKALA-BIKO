@@ -1,9 +1,9 @@
 import "./App.css";
-import { ListComponent } from "./components/List/ListComponent";
+import { List } from "./components/List/List";
 import { NavTypesListItems } from "./components/Nav/NavTypesListItems";
 import { FormComponent } from "./components/FormComponent";
 import { HeaderComponent } from "./components/HeaderComponent";
-import { FooterComponent } from "./components/FooterComponent";
+import { Footer } from "./components/Footer";
 
 export const App = () => {
   return (
@@ -14,10 +14,10 @@ export const App = () => {
           <h1 className="title">Mi lista de nombres</h1>
           <FormComponent />
           <NavTypesListItems />
-          <ListComponent />
+          <List />
         </section>
       </main>
-      <FooterComponent />
+      <Footer />
     </>
   );
 };
