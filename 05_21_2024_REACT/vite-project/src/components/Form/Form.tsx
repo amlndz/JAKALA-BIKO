@@ -13,7 +13,12 @@ export const FormComponent: React.FC<Props> = ({ addItem }) => {
   };
 
   const onClickAtAddItem = () => {
-    name !== "" ? addItem(name) : alert("Debes introducir un nombre");
+    if (name !== "") {
+      addItem(name);
+      setName("");
+    } else {
+      alert("Debes introducir un nombre");
+    }
   };
 
   return (

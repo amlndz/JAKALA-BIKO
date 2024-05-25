@@ -17,8 +17,8 @@ export const App = () => {
 
   const onClickAtAddItem = (name: string) => {
     const newItem: Item = { name: name, isDone: false };
-    // setItems((items) => items.push(newItem));
-    setItems([...items, newItem]);
+    setItems((preItem) => preItem.concat(newItem));
+    // setItems([...items, newItem]);
   };
 
   const handleToggleItem = (name: string) => {
