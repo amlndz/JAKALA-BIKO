@@ -15,8 +15,8 @@ export const App = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [filter, setFilter] = useState<"all" | "pending" | "completed">("all");
 
-  const addItem = () => {
-    setItems([...items, { name: "Arya", isDone: false }]);
+  const onClickAtAddItem = (name: string) => {
+    setItems([...items, { name: name, isDone: false }]);
   };
 
   const handleToggleItem = (name: string) => {
@@ -37,7 +37,7 @@ export const App = () => {
       <main className="main main--thin">
         <section className="section">
           <h1 className="title">Mi lista de nombres</h1>
-          <FormComponent onClick={addItem} />
+          <FormComponent addItem={onClickAtAddItem} />
           <NavTypesListItems
             total={total}
             pending={pending}

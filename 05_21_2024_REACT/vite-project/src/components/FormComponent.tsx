@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import styles from "./FormComponent.module.css";
 
-type Prop = {
-  onClick: () => void;
+type Props = {
+  addItem: (name: string) => void;
 };
 
-export const FormComponent: React.FC<Prop> = ({ onClick }) => {
-  const [nombre, setNombre] = useState("");
+export const FormComponent: React.FC<Props> = ({ addItem }) => {
+  const [name, setName] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNombre(e.target.value);
+    setName(e.target.value);
+  };
+
+  const onClickAtAddItem = () => {
+    if (name !== "") addItem(name);
   };
 
   return (
@@ -20,13 +24,13 @@ export const FormComponent: React.FC<Prop> = ({ onClick }) => {
         placeholder="Joffrey Baratheon"
         aria-label="Introduce un nombre"
         className={styles["form__input"]}
-        value={nombre}
+        value={name}
         onChange={handleChange}
       />
       <button
         type="button"
         className={styles["form__button"]}
-        onClick={onClick}
+        onClick={onClickAtAddItem}
       >
         Añadir
       </button>
