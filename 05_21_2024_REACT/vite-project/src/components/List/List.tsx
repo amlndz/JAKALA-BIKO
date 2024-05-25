@@ -4,11 +4,12 @@ import "./List.css";
 type Item = {
   name: string;
   isDone: boolean;
+  id: number;
 };
 
 type Props = {
   items: Item[];
-  onToggle: (name: string) => void;
+  onToggle: (name: string, id: number) => void;
   filter: "all" | "pending" | "completed";
 };
 
@@ -25,7 +26,7 @@ export const List: React.FC<Props> = ({ items, onToggle, filter }) => {
         <Item
           key={item.name}
           isDone={item.isDone}
-          onChange={() => onToggle(item.name)}
+          onChange={() => onToggle(item.name, item.id)}
         >
           {item.name}
         </Item>

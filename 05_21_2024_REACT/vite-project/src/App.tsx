@@ -7,6 +7,7 @@ import { Footer } from "./components/Footer/Footer";
 import { useState } from "react";
 
 type Item = {
+  id: number;
   name: string;
   isDone: boolean;
 };
@@ -16,15 +17,21 @@ export const App = () => {
   const [filter, setFilter] = useState<"all" | "pending" | "completed">("all");
 
   const onClickAtAddItem = (name: string) => {
-    const newItem: Item = { name: name, isDone: false };
+    const newItem: Item = {
+      id: Math.random() * 100,
+      name: name,
+      isDone: false,
+    };
     setItems((preItem) => preItem.concat(newItem));
     // setItems([...items, newItem]);
   };
 
-  const handleToggleItem = (name: string) => {
+  const handleToggleItem = (name: string, id: number) => {
     setItems(
       items.map((item) =>
-        item.name === name ? { name: name, isDone: !item.isDone } : item
+        item.name === name && item.id === id
+          ? { id: id, name: name, isDone: !item.isDone }
+          : item
       )
     );
   };
