@@ -12,6 +12,9 @@ export const FormComponent: React.FC<Props> = ({ addItem }) => {
     setName(e.target.value);
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
   const onClickAtAddItem = () => {
     if (name !== "") {
       addItem(name);
@@ -22,7 +25,7 @@ export const FormComponent: React.FC<Props> = ({ addItem }) => {
   };
 
   return (
-    <form className={styles["form"]}>
+    <form className={styles["form"]} onSubmit={handleSubmit}>
       <input
         type="text"
         name="nombre"
@@ -33,7 +36,7 @@ export const FormComponent: React.FC<Props> = ({ addItem }) => {
         onChange={handleChange}
       />
       <button
-        type="button"
+        type="submit"
         className={styles["form__button"]}
         onClick={onClickAtAddItem}
       >
