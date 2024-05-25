@@ -15,6 +15,10 @@ export const App = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [filter, setFilter] = useState<"all" | "pending" | "completed">("all");
 
+  const addItem = () => {
+    setItems([...items, { name: "Arya", isDone: false }]);
+  };
+
   const handleToggleItem = (name: string) => {
     setItems(
       items.map((item) =>
@@ -33,7 +37,7 @@ export const App = () => {
       <main className="main main--thin">
         <section className="section">
           <h1 className="title">Mi lista de nombres</h1>
-          <FormComponent />
+          <FormComponent onClick={addItem} />
           <NavTypesListItems
             total={total}
             pending={pending}

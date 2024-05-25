@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import styles from "./FormComponent.module.css";
 
-export const FormComponent: React.FC = () => {
+type Prop = {
+  onClick: () => void;
+};
+
+export const FormComponent: React.FC<Prop> = ({ onClick }) => {
   const [nombre, setNombre] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNombre(e.target.value);
-  };
-
-  const handleAdd = () => {
-    // Add logic to add name to list
   };
 
   return (
@@ -26,7 +26,7 @@ export const FormComponent: React.FC = () => {
       <button
         type="button"
         className={styles["form__button"]}
-        onClick={handleAdd}
+        onClick={onClick}
       >
         Añadir
       </button>
