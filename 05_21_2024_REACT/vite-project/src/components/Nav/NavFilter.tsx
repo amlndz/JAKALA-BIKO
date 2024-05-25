@@ -21,7 +21,7 @@ export const NavFilter: React.FC<Props> = ({
       }`}
       onClick={() => setFilter(thisFilter)}
     >
-      Todos <span className={styles["circle"]}>{count}</span>
+      {thisFilter} <span className={styles["circle"]}>{count}</span>
     </li>
   );
 };
