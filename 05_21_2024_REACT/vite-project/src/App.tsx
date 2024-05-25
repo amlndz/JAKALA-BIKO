@@ -15,6 +15,10 @@ export const App = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [filter, setFilter] = useState<"all" | "pending" | "completed">("all");
 
+  const total = items.length;
+  const pending = items.filter((item) => !item.isDone).length;
+  const done = items.filter((item) => item.isDone).length;
+
   return (
     <>
       <HeaderComponent />
