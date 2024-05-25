@@ -16,13 +16,15 @@ export const App = () => {
   const [filter, setFilter] = useState<"all" | "pending" | "completed">("all");
 
   const onClickAtAddItem = (name: string) => {
-    setItems([...items, { name: name, isDone: false }]);
+    const newItem: Item = { name: name, isDone: false };
+    // setItems((items) => items.push(newItem));
+    setItems([...items, newItem]);
   };
 
   const handleToggleItem = (name: string) => {
     setItems(
       items.map((item) =>
-        item.name === name ? { ...item, isDone: !item.isDone } : item
+        item.name === name ? { name: name, isDone: !item.isDone } : item
       )
     );
   };

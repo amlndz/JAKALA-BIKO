@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./FormComponent.module.css";
+import styles from "./Form.module.css";
 
 type Props = {
   addItem: (name: string) => void;
@@ -13,7 +13,7 @@ export const FormComponent: React.FC<Props> = ({ addItem }) => {
   };
 
   const onClickAtAddItem = () => {
-    if (name !== "") addItem(name);
+    name !== "" ? addItem(name) : alert("Debes introducir un nombre");
   };
 
   return (
