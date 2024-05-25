@@ -36,9 +36,9 @@ export const App = () => {
     );
   };
 
-  const total = items.length;
-  const pending = items.filter((item) => !item.isDone).length;
-  const done = items.filter((item) => item.isDone).length;
+  const totalCount = items.length;
+  const pendingCount = items.filter((item) => !item.isDone).length;
+  const doneCount = items.filter((item) => item.isDone).length;
 
   return (
     <>
@@ -48,9 +48,9 @@ export const App = () => {
           <h1 className="title">Mi lista de nombres</h1>
           <FormComponent addItem={onClickAtAddItem} />
           <NavFilterList
-            total={total}
-            pending={pending}
-            completed={done}
+            total={totalCount}
+            pending={pendingCount}
+            completed={doneCount}
             filter={filter}
             setFilter={setFilter}
           />
