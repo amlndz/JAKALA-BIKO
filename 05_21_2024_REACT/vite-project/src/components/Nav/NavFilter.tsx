@@ -2,48 +2,26 @@ import React from "react";
 import styles from "./NavFilter.module.css";
 
 type Props = {
-  total: number;
-  pending: number;
-  completed: number;
+  count: number;
+  thisFilter: string;
   filter: "all" | "pending" | "completed";
   setFilter: (filter: "all" | "pending" | "completed") => void;
 };
 
 export const NavFilter: React.FC<Props> = ({
-  total,
-  pending,
-  completed,
+  count,
+  thisFilter,
   filter,
   setFilter,
 }) => {
   return (
-    <nav className={styles["tab-menu"]}>
-      <ul className={styles["tab-container"]}>
-        <li
-          className={`${styles["tab"]} ${
-            filter === "all" ? styles["tab--active"] : ""
-          }`}
-          onClick={() => setFilter("all")}
-        >
-          Todos <span className={styles["circle"]}>{total}</span>
-        </li>
-        <li
-          className={`${styles["tab"]} ${
-            filter === "pending" ? styles["tab--active"] : ""
-          }`}
-          onClick={() => setFilter("pending")}
-        >
-          Pendientes <span className={styles["circle"]}>{pending}</span>
-        </li>
-        <li
-          className={`${styles["tab"]} ${
-            filter === "completed" ? styles["tab--active"] : ""
-          }`}
-          onClick={() => setFilter("completed")}
-        >
-          Completados <span className={styles["circle"]}>{completed}</span>
-        </li>
-      </ul>
-    </nav>
+    <li
+      className={`${styles["tab"]} ${
+        filter === thisFilter ? styles["tab--active"] : ""
+      }`}
+      onClick={() => setFilter("all")}
+    >
+      Todos <span className={styles["circle"]}>{count}</span>
+    </li>
   );
 };

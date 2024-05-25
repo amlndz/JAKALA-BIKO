@@ -22,7 +22,7 @@ export const FormComponent: React.FC<Props> = ({ addItem }) => {
   };
 
   return (
-    <form className={styles["form"]}>
+    <form className={styles["form"]} onSubmit={onClickAtAddItem}>
       <input
         type="text"
         name="nombre"
