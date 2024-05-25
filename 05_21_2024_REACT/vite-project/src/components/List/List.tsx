@@ -1,4 +1,4 @@
-import { Item } from "../ListItem/Item";
+import { Item } from "./Item/Item";
 import "./List.css";
 
 type Item = {

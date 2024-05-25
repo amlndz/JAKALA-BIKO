@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./HeaderComponent.module.css";
+import styles from "./Header.module.css";
 
-export const HeaderComponent: React.FC = () => {
+export const Header: React.FC = () => {
   return (
     <header className={styles["topbar"]}>
       <nav className={styles["menu"]}>
