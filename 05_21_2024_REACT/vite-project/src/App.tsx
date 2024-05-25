@@ -27,8 +27,8 @@ export const App = () => {
   };
 
   const handleToggleItem = (name: string, id: number) => {
-    setItems(
-      items.map((item) =>
+    setItems((preItem) =>
+      preItem.map((item) =>
         item.name === name && item.id === id
           ? { id: id, name: name, isDone: !item.isDone }
           : item
