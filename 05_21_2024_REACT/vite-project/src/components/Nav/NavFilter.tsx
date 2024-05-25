@@ -3,7 +3,7 @@ import styles from "./NavFilter.module.css";
 
 type Props = {
   count: number;
-  thisFilter: string;
+  thisFilter: "all" | "pending" | "completed";
   filter: "all" | "pending" | "completed";
   setFilter: (filter: "all" | "pending" | "completed") => void;
 };
@@ -19,7 +19,7 @@ export const NavFilter: React.FC<Props> = ({
       className={`${styles["tab"]} ${
         filter === thisFilter ? styles["tab--active"] : ""
       }`}
-      onClick={() => setFilter("all")}
+      onClick={() => setFilter(thisFilter)}
     >
       Todos <span className={styles["circle"]}>{count}</span>
     </li>

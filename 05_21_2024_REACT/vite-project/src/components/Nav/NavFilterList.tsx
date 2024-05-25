@@ -26,6 +26,7 @@ export const NavFilterList: React.FC<Props> = ({
     { name: "pending", count: pending },
     { name: "completed", count: completed },
   ];
+
   return (
     <nav className={styles["tab-menu"]}>
       <ul className={styles["tab-container"]}>
